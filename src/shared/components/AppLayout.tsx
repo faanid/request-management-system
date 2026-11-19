@@ -4,7 +4,7 @@ import {
   Plus,
   Search,
 } from "lucide-react";
-import { NavLink, Outlet, useLocation } from "react-router";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 
 const pageTitles: Record<string, string> = {
   "/": "داشبورد",
