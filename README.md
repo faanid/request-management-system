@@ -36,17 +36,7 @@ Install the frontend dependencies:
 npm install
 ```
 
-Create a local environment file from the example:
-
-```bash
-cp .env.example .env
-```
-
-On Windows PowerShell, use:
-
-```powershell
-Copy-Item .env.example .env
-```
+The frontend defaults to the local Mock API at `http://127.0.0.1:8000`. No frontend environment file is required for local development.
 
 Start the frontend:
 
@@ -60,38 +50,24 @@ The development server uses `http://localhost:5173` by default.
 
 The assessment's FastAPI service is included in `mock-api`. It uses a local SQLite database and seeds 16 sample requests on first startup.
 
-Run it with Docker:
+Run it with Docker if Docker is installed and its engine is running:
 
 ```bash
 docker compose up --build
 ```
 
-Or run it with Python 3.10 or newer:
+Alternatively, run it locally with Python 3.10 or newer. From the repository root, use Git Bash:
 
 ```bash
 cd mock-api
 python -m venv .venv
+./.venv/Scripts/python.exe -m pip install -r requirements.txt
+./.venv/Scripts/python.exe -m uvicorn app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Activate the environment in PowerShell:
+Keep this terminal open while using the frontend. The API starts at `http://127.0.0.1:8000`; verify it at `/api/health` and open its interactive documentation at `/docs`.
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-Install the dependencies and start the service:
-
-```bash
-python -m pip install -r requirements.txt
-python -m uvicorn app:app --reload --host 127.0.0.1 --port 8000
-```
-
-If PowerShell blocks environment activation, run the commands through the environment's Python executable:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m uvicorn app:app --reload --host 127.0.0.1 --port 8000
-```
+If you use PowerShell instead of Git Bash, the equivalent environment Python path is `.\.venv\Scripts\python.exe`.
 
 The API is available at `http://127.0.0.1:8000` and its interactive documentation is at `http://127.0.0.1:8000/docs`.
 
@@ -124,4 +100,4 @@ The GitHub Actions workflow also runs frontend type-check/build validation and M
 
 ## Implementation
 
-The repository foundation and local Mock API are in place. The application interface and API-connected workflows are being implemented.
+The repository includes the React application, API-connected request workflows, local FastAPI Mock API, responsive RTL layouts, and automated CI checks. The editable Figma design file is a separate assessment deliverable.
