@@ -67,7 +67,7 @@ export function RequestDetailsPage() {
         onError: (error) => {
           setActionMessage(error instanceof ApiError && error.status === 409
             ? "این درخواست در تب یا نشست دیگری تغییر کرده است. اطلاعات جدید را بارگیری کنید."
-            : "تغییر وضعیت انجام نشد. وضعیت قبلی بازیابی شد."),
+            : "تغییر وضعیت انجام نشد. وضعیت قبلی بازیابی شد.");
         },
       },
     );
