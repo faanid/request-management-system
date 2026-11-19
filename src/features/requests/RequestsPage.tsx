@@ -55,9 +55,11 @@ export function RequestsPage() {
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
+      const query = search.trim();
       setSearchParams((current) => {
+        if ((current.get("q") ?? "") === query) return current;
         const next = new URLSearchParams(current);
-        if (search.trim()) next.set("q", search.trim());
+        if (query) next.set("q", query);
         else next.delete("q");
         next.set("page", "1");
         return next;
@@ -89,6 +91,7 @@ export function RequestsPage() {
   }
 
   const data = requestsQuery.data;
+  const hasActiveFilters = Boolean(filters.q?.trim() || filters.status || filters.priority);
   const mutationError = updateMutation.error;
   const isConflict = mutationError instanceof ApiError && mutationError.status === 409;
 
@@ -101,7 +104,7 @@ export function RequestsPage() {
       <StateView
         kind="error"
         title="فهرست درخواست‌ها بارگذاری نشد"
-        description="مطمئن شوید Mock API در حال اجراست."
+        description="اتصال به سرویس برقرار نیست. لطفاً دوباره تلاش کنید."
         onRetry={() => void requestsQuery.refetch()}
       />
     );
@@ -179,7 +182,6 @@ export function RequestsPage() {
 
         <div className="list-summary">
           <span>نمایش <strong>{formatNumber(data?.items.length ?? 0)}</strong> مورد از <strong>{formatNumber(data?.total ?? 0)}</strong> درخواست</span>
-          <span className="list-summary-caption">آخرین اطلاعات دریافت‌شده از سرویس</span>
         </div>
 
         {data?.items.length ? (
@@ -298,19 +300,46 @@ export function RequestsPage() {
         ) : (
           <StateView
             kind="empty"
-            title="درخواستی پیدا نشد"
-            description="عبارت جست‌وجو یا فیلترها را تغییر دهید."
+            title={
+              hasActiveFilters
+                ? "درخواستی پیدا نشد"
+                : data?.total === 0
+                  ? "هنوز درخواستی ثبت نشده است"
+                  : "درخواستی در این صفحه نیست"
+            }
+            description={
+              hasActiveFilters
+                ? "عبارت جست‌وجو یا فیلترها را تغییر دهید."
+                : data?.total === 0
+                  ? "برای شروع، اولین درخواست را ثبت کنید."
+                  : "به صفحه اول فهرست برگردید."
+            }
             action={
-              <button
-                className="button button-secondary button-small"
-                type="button"
-                onClick={() => {
-                  setSearch("");
-                  setSearchParams(new URLSearchParams());
-                }}
-              >
-                پاک کردن فیلترها
-              </button>
+              hasActiveFilters ? (
+                <button
+                  className="button button-secondary button-small"
+                  type="button"
+                  onClick={() => {
+                    setSearch("");
+                    setSearchParams(new URLSearchParams());
+                  }}
+                >
+                  پاک کردن فیلترها
+                </button>
+              ) : data?.total === 0 ? (
+                <Link className="button button-primary button-small" to="/requests/new">
+                  <Plus size={16} />
+                  ثبت درخواست
+                </Link>
+              ) : (
+                <button
+                  className="button button-secondary button-small"
+                  type="button"
+                  onClick={() => changePage(1)}
+                >
+                  رفتن به صفحه اول
+                </button>
+              )
             }
           />
         )}

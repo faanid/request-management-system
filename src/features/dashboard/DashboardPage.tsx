@@ -59,28 +59,28 @@ export function DashboardPage() {
       <section className="stats-grid" aria-label="آمار درخواست‌ها">
         <StatCard
           label="کل درخواست‌ها"
-          value={statsQuery.data?.total ?? 0}
+          value={statsQuery.isPending ? null : (statsQuery.data?.total ?? 0)}
           icon={ClipboardList}
           tone="blue"
           helper="تمام درخواست‌ها"
         />
         <StatCard
           label="درخواست‌های جدید"
-          value={statsQuery.data?.new ?? 0}
+          value={statsQuery.isPending ? null : (statsQuery.data?.new ?? 0)}
           icon={CircleDot}
           tone="amber"
           helper="نیازمند بررسی"
         />
         <StatCard
           label="در حال بررسی"
-          value={statsQuery.data?.in_progress ?? 0}
+          value={statsQuery.isPending ? null : (statsQuery.data?.in_progress ?? 0)}
           icon={Clock3}
           tone="slate"
           helper="در جریان"
         />
         <StatCard
           label="تکمیل‌شده"
-          value={statsQuery.data?.completed ?? 0}
+          value={statsQuery.isPending ? null : (statsQuery.data?.completed ?? 0)}
           icon={CheckCircle2}
           tone="green"
           helper="بسته‌شده"

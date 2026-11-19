@@ -99,7 +99,14 @@ export function RequestDetailsPage() {
         <div className={`inline-alert ${updateMutation.isSuccess ? "inline-alert-success" : ""}`} role="status">
           <span>{actionMessage}</span>
           {isConflict && (
-            <button className="alert-action" type="button" onClick={() => void requestQuery.refetch()}>
+            <button
+              className="alert-action"
+              type="button"
+              onClick={async () => {
+                const result = await requestQuery.refetch();
+                if (result.isSuccess) setActionMessage("");
+              }}
+            >
               <RefreshCw size={14} />
               بارگیری مجدد
             </button>

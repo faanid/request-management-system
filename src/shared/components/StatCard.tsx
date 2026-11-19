@@ -3,7 +3,7 @@ import { formatNumber } from "../lib/format";
 
 interface StatCardProps {
   label: string;
-  value: number;
+  value: number | null;
   icon: LucideIcon;
   tone: "blue" | "amber" | "green" | "slate";
   helper: string;
@@ -18,7 +18,7 @@ export function StatCard({ label, value, icon: Icon, tone, helper }: StatCardPro
         </span>
         <span className="stat-helper">{helper}</span>
       </div>
-      <div className="stat-value">{formatNumber(value)}</div>
+      <div className="stat-value">{value === null ? "—" : formatNumber(value)}</div>
       <div className="stat-label">{label}</div>
     </article>
   );
