@@ -25,8 +25,7 @@ export function AppLayout() {
             <ClipboardList size={22} />
           </span>
           <span>
-            <strong>درخواست‌یار</strong>
-            <small>سامانه مدیریت سازمانی</small>
+            <strong>مدیریت درخواست‌ها</strong>
           </span>
         </div>
 
@@ -42,16 +41,6 @@ export function AppLayout() {
           </NavLink>
         </nav>
 
-        <div className="sidebar-bottom">
-          <div className="sidebar-help">
-            <span className="help-dot" />
-            <div>
-              <strong>سرویس محلی</strong>
-              <small>اتصال به API آزمایشی</small>
-            </div>
-          </div>
-          <span className="sidebar-version">نسخه ارزیابی ۱.۰</span>
-        </div>
       </aside>
 
       <div className="workspace">
@@ -64,13 +53,6 @@ export function AppLayout() {
             <Link className="icon-button topbar-search" to="/requests" aria-label="جست‌وجوی درخواست‌ها">
               <Search size={19} />
             </Link>
-            <div className="profile">
-              <span className="profile-avatar">ف</span>
-              <span className="profile-copy">
-                <strong>کاربر سیستم</strong>
-                <small>مدیر</small>
-              </span>
-            </div>
           </div>
         </header>
 
