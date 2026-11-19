@@ -20,7 +20,8 @@ const defaultValues: RequestFormValues = {
 export function RequestFormPage() {
   const { id } = useParams();
   const requestId = id ? Number(id) : null;
-  const isEditing = requestId !== null;
+  const isEditing = id !== undefined;
+  const isValidRequestId = requestId !== null && Number.isInteger(requestId) && requestId > 0;
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const requestQuery = useRequest(requestId ?? 0);
@@ -96,6 +97,17 @@ export function RequestFormPage() {
       setHasConflict(false);
       setFormError("");
     }
+  }
+
+  if (isEditing && !isValidRequestId) {
+    return (
+      <StateView
+        kind="error"
+        title="شناسه درخواست معتبر نیست"
+        description="برای ویرایش، یک درخواست معتبر را از فهرست انتخاب کنید."
+        action={<Link className="button button-secondary button-small" to="/requests">بازگشت به فهرست</Link>}
+      />
+    );
   }
 
   if (isEditing && requestQuery.isPending) {
