@@ -135,19 +135,6 @@ export function DashboardPage() {
         )}
       </section>
 
-      <section className="dashboard-footer">
-        <div className="footer-note">
-          <span className="footer-note-icon"><ClipboardList size={18} /></span>
-          <span>
-            <strong>مدیریت شفاف درخواست‌ها</strong>
-            <small>همه اطلاعات از سرویس مرکزی دریافت می‌شوند.</small>
-          </span>
-        </div>
-        <Link to="/requests" className="footer-link">
-          رفتن به فهرست درخواست‌ها
-          <ArrowLeft size={16} />
-        </Link>
-      </section>
     </div>
   );
 }
