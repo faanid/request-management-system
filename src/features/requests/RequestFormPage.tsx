@@ -169,9 +169,11 @@ export function RequestFormPage() {
               {...register("title")}
               placeholder="مثلاً درخواست دسترسی به سامانه گزارش‌گیری"
               maxLength={120}
+              required
               aria-invalid={Boolean(errors.title)}
+              aria-describedby={errors.title ? "title-error" : undefined}
             />
-            {errors.title && <small className="field-error">{errors.title.message}</small>}
+            {errors.title && <small className="field-error" id="title-error">{errors.title.message}</small>}
           </label>
 
           <label className="form-field form-field-full">
@@ -181,9 +183,11 @@ export function RequestFormPage() {
               placeholder="جزئیات و دلیل ثبت درخواست را بنویسید..."
               rows={6}
               maxLength={2000}
+              required
               aria-invalid={Boolean(errors.description)}
+              aria-describedby={errors.description ? "description-error" : undefined}
             />
-            {errors.description && <small className="field-error">{errors.description.message}</small>}
+            {errors.description && <small className="field-error" id="description-error">{errors.description.message}</small>}
           </label>
 
           <label className="form-field">
@@ -192,19 +196,26 @@ export function RequestFormPage() {
               {...register("requester")}
               placeholder="نام و نام خانوادگی"
               maxLength={100}
+              required
               aria-invalid={Boolean(errors.requester)}
+              aria-describedby={errors.requester ? "requester-error" : undefined}
             />
-            {errors.requester && <small className="field-error">{errors.requester.message}</small>}
+            {errors.requester && <small className="field-error" id="requester-error">{errors.requester.message}</small>}
           </label>
 
           <label className="form-field">
             <span>اولویت درخواست <b>*</b></span>
-            <select {...register("priority")} aria-invalid={Boolean(errors.priority)}>
+            <select
+              {...register("priority")}
+              required
+              aria-invalid={Boolean(errors.priority)}
+              aria-describedby={errors.priority ? "priority-error" : undefined}
+            >
               <option value="low">کم</option>
               <option value="medium">متوسط</option>
               <option value="high">زیاد</option>
             </select>
-            {errors.priority && <small className="field-error">{errors.priority.message}</small>}
+            {errors.priority && <small className="field-error" id="priority-error">{errors.priority.message}</small>}
           </label>
         </div>
 
