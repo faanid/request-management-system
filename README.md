@@ -4,9 +4,9 @@ A responsive RTL web application for managing organizational requests. The proje
 
 ## Scope
 
-The application is being developed against the REST API supplied with the assessment. Request data and dashboard statistics are read from the API; the frontend does not use hardcoded records as its source of truth.
+The application uses the REST API supplied with the assessment. Request data and dashboard statistics are read from the API; the frontend does not use hardcoded records as its source of truth.
 
-The planned interface includes:
+The interface includes:
 
 - Dashboard statistics for total, new, in-progress, and completed requests
 - Request listing with search, status and priority filters, and pagination
@@ -122,6 +122,6 @@ npm run build
 
 The GitHub Actions workflow also runs frontend type-check/build validation and Mock API smoke tests.
 
-## Project status
+## Implementation
 
 The repository foundation and local Mock API are in place. The application interface and API-connected workflows are being implemented.
