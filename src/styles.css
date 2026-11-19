@@ -174,46 +174,6 @@ textarea:focus-visible {
   color: #d9b69b;
 }
 
-.sidebar-bottom {
-  margin-top: auto;
-}
-
-.sidebar-help {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 12px;
-  border: 1px solid rgb(255 255 255 / 9%);
-  border-radius: 12px;
-  background: rgb(255 255 255 / 4%);
-}
-
-.help-dot {
-  width: 8px;
-  height: 8px;
-  flex: 0 0 8px;
-  border-radius: 50%;
-  background: #55c79a;
-  box-shadow: 0 0 0 4px rgb(85 199 154 / 12%);
-}
-
-.sidebar-help strong {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.sidebar-help small {
-  margin-top: 4px;
-  color: #9aa8bb;
-  font-size: 11px;
-}
-
-.sidebar-version {
-  display: block;
-  padding: 18px 8px 0;
-  color: #78889f;
-  font-size: 11px;
-}
 
 .workspace {
   min-width: 0;
@@ -283,37 +243,6 @@ textarea:focus-visible {
   background: #e76c72;
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding-right: 17px;
-  border-right: 1px solid var(--color-border);
-}
-
-.profile-avatar {
-  display: grid;
-  width: 37px;
-  height: 37px;
-  place-items: center;
-  border-radius: 12px;
-  background: #f0e4d9;
-  color: #8a5a3c;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.profile-copy strong {
-  color: #344054;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.profile-copy small {
-  margin-top: 3px;
-  color: #98a2b3;
-  font-size: 11px;
-}
 
 .page-content {
   width: min(100%, 1480px);
@@ -634,48 +563,6 @@ textarea:focus-visible {
   color: #758195;
 }
 
-.dashboard-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 15px 18px;
-  border: 1px solid #e9dfd4;
-  border-radius: 12px;
-  background: #faf6f0;
-}
-
-.footer-note {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-
-.footer-note-icon {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 9px;
-  background: #f2e7dd;
-  color: #8a5a3c;
-}
-
-.footer-note strong,
-.footer-note small {
-  display: block;
-}
-
-.footer-note strong {
-  color: #42516a;
-  font-size: 11px;
-}
-
-.footer-note small {
-  margin-top: 4px;
-  color: #929daf;
-  font-size: 10px;
-}
 
 .list-toolbar {
   display: flex;
@@ -1417,26 +1304,6 @@ textarea:focus-visible {
     border-radius: 9px;
   }
 
-  .profile {
-    gap: 7px;
-    padding-right: 9px;
-  }
-
-  .profile-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    font-size: 14px;
-  }
-
-  .profile-copy strong {
-    font-size: 10px;
-  }
-
-  .profile-copy small {
-    font-size: 10px;
-  }
-
   .page-content {
     padding: 22px 16px 84px;
   }
@@ -1553,13 +1420,6 @@ textarea:focus-visible {
     padding: 13px;
   }
 
-  .footer-note small {
-    font-size: 10px;
-  }
-
-  .footer-link {
-    font-size: 10px;
-  }
 
   .requests-panel {
     overflow: hidden;
