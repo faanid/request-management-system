@@ -31,11 +31,13 @@ const priorityOptions: { value: RequestPriority | ""; label: string }[] = [
 ];
 
 function getFilters(params: URLSearchParams): RequestFilters {
+  const pageParam = Number(params.get("page") ?? 1);
+
   return {
     q: params.get("q") ?? "",
     status: (params.get("status") ?? "") as RequestStatus | "",
     priority: (params.get("priority") ?? "") as RequestPriority | "",
-    page: Math.max(1, Number(params.get("page") ?? 1)),
+    page: Number.isInteger(pageParam) && pageParam > 0 ? pageParam : 1,
     page_size: 10,
   };
 }

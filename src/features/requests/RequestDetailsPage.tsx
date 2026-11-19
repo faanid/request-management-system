@@ -30,6 +30,18 @@ export function RequestDetailsPage() {
   const requestQuery = useRequest(requestId);
   const updateMutation = useUpdateRequest();
   const [actionMessage, setActionMessage] = useState("");
+  const isValidRequestId = Number.isInteger(requestId) && requestId > 0;
+
+  if (!isValidRequestId) {
+    return (
+      <StateView
+        kind="error"
+        title="شناسه درخواست معتبر نیست"
+        description="از فهرست درخواست‌ها یک مورد معتبر انتخاب کنید."
+        action={<Link className="button button-secondary button-small" to="/requests">بازگشت به فهرست</Link>}
+      />
+    );
+  }
 
   if (requestQuery.isPending) {
     return <StateView kind="loading" title="در حال دریافت جزئیات درخواست" />;
