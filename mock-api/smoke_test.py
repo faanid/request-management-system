@@ -1,5 +1,6 @@
 import json
 from urllib.error import HTTPError
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 BASE_URL = "http://127.0.0.1:8000"
@@ -29,7 +30,7 @@ assert list_status == 200
 assert len(listing["items"]) == 5
 assert listing["total"] == 16
 
-search_status, search = send("GET", "/api/requests?q=دسترسی")
+search_status, search = send("GET", f"/api/requests?q={quote('دسترسی')}")
 assert search_status == 200
 assert search["total"] > 0
 
