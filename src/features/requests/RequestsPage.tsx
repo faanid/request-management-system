@@ -53,15 +53,17 @@ export function RequestsPage() {
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      const next = new URLSearchParams(searchParams);
-      if (search.trim()) next.set("q", search.trim());
-      else next.delete("q");
-      next.set("page", "1");
-      if (next.toString() !== searchParams.toString()) setSearchParams(next);
+      setSearchParams((current) => {
+        const next = new URLSearchParams(current);
+        if (search.trim()) next.set("q", search.trim());
+        else next.delete("q");
+        next.set("page", "1");
+        return next;
+      });
     }, 300);
 
     return () => window.clearTimeout(timer);
-  }, [search, searchParams, setSearchParams]);
+  }, [search, setSearchParams]);
 
   function updateFilter(key: "status" | "priority", value: string) {
     const next = new URLSearchParams(searchParams);
