@@ -132,13 +132,13 @@ textarea:focus-visible {
 .brand small {
   margin-top: 4px;
   color: #a6b2c4;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .sidebar-label {
   padding: 0 10px 12px;
   color: #8492a8;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -198,21 +198,21 @@ textarea:focus-visible {
 }
 
 .sidebar-help strong {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .sidebar-help small {
   margin-top: 4px;
   color: #9aa8bb;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .sidebar-version {
   display: block;
   padding: 18px 8px 0;
   color: #78889f;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .workspace {
@@ -238,7 +238,7 @@ textarea:focus-visible {
   display: block;
   margin-bottom: 5px;
   color: #98a2b3;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .topbar-heading h1 {
@@ -305,14 +305,14 @@ textarea:focus-visible {
 
 .profile-copy strong {
   color: #344054;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .profile-copy small {
   margin-top: 3px;
   color: #98a2b3;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .page-content {
@@ -337,7 +337,7 @@ textarea:focus-visible {
 .page-kicker {
   margin: 0 0 7px;
   color: #748196;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -353,7 +353,7 @@ textarea:focus-visible {
 .welcome-description {
   margin: 8px 0 0;
   color: #8994a5;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.9;
 }
 
@@ -366,7 +366,7 @@ textarea:focus-visible {
   padding: 0 17px;
   border: 1px solid transparent;
   border-radius: 9px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
@@ -401,7 +401,7 @@ textarea:focus-visible {
 .button-small {
   min-height: 34px;
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .stats-grid {
@@ -456,7 +456,7 @@ textarea:focus-visible {
 
 .stat-helper {
   color: #9aa4b2;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .stat-value {
@@ -471,7 +471,7 @@ textarea:focus-visible {
 .stat-label {
   margin-top: 5px;
   color: #7c8798;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .content-panel {
@@ -505,7 +505,7 @@ textarea:focus-visible {
 .status-editor p {
   margin: 5px 0 0;
   color: #98a2b3;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .text-link,
@@ -514,7 +514,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 6px;
   color: #8a5a3c;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -569,7 +569,7 @@ textarea:focus-visible {
 .recent-main strong {
   overflow: hidden;
   color: #354256;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -578,7 +578,7 @@ textarea:focus-visible {
 .recent-main small {
   margin-top: 6px;
   color: #9aa4b2;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .recent-meta {
@@ -599,7 +599,7 @@ textarea:focus-visible {
   justify-content: center;
   padding: 0 9px;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -668,13 +668,13 @@ textarea:focus-visible {
 
 .footer-note strong {
   color: #42516a;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .footer-note small {
   margin-top: 4px;
   color: #929daf;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .list-toolbar {
@@ -711,7 +711,7 @@ textarea:focus-visible {
   outline: 0;
   background: transparent;
   color: #344054;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .search-field input::placeholder {
@@ -758,7 +758,7 @@ textarea:focus-visible {
   outline: 0;
   background: transparent;
   color: #59667a;
-  font-size: 14px;
+  font-size: 11px;
   cursor: pointer;
 }
 
@@ -772,7 +772,7 @@ textarea:focus-visible {
   justify-content: space-between;
   padding: 15px 21px 10px;
   color: #8792a3;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .list-summary strong {
@@ -801,7 +801,7 @@ textarea:focus-visible {
   padding: 0 17px;
   background: #fafbfc;
   color: #8c97a7;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
 }
 
@@ -810,7 +810,7 @@ textarea:focus-visible {
   padding: 8px 17px;
   border-top: 1px solid #f0f2f5;
   color: #697689;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .requests-table tbody tr:hover {
@@ -839,7 +839,7 @@ textarea:focus-visible {
   max-width: 230px;
   overflow: hidden;
   color: #354256;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
   text-overflow: ellipsis;
 }
@@ -847,7 +847,7 @@ textarea:focus-visible {
 .request-title-link small {
   margin-top: 4px;
   color: #a1aab7;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .date-cell {
@@ -868,7 +868,7 @@ textarea:focus-visible {
   border-radius: 7px;
   background: #fff;
   color: #637087;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .table-action {
@@ -900,7 +900,7 @@ textarea:focus-visible {
   padding: 0 20px;
   border-top: 1px solid #eef1f5;
   color: #8b96a6;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .pagination-actions {
@@ -935,7 +935,7 @@ textarea:focus-visible {
   border-radius: 8px;
   background: #fff9ef;
   color: #986b2d;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 1.8;
 }
 
@@ -952,7 +952,7 @@ textarea:focus-visible {
   border: 0;
   background: transparent;
   color: #8a5a3c;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -992,7 +992,7 @@ textarea:focus-visible {
   max-width: 340px;
   margin: 7px 0 14px;
   color: #929daf;
-  font-size: 14px;
+  font-size: 11px;
   line-height: 1.9;
 }
 
@@ -1022,7 +1022,7 @@ textarea:focus-visible {
   border: 0;
   background: transparent;
   color: #64738a;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -1032,7 +1032,7 @@ textarea:focus-visible {
 
 .record-id {
   color: #9aa4b2;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .detail-header {
@@ -1089,7 +1089,7 @@ textarea:focus-visible {
 .description-copy {
   padding: 5px 22px 24px;
   color: #667386;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 2.3;
   white-space: pre-wrap;
 }
@@ -1129,12 +1129,12 @@ textarea:focus-visible {
 .detail-info-row small {
   margin-bottom: 4px;
   color: #9aa4b2;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .detail-info-row strong {
   color: #526075;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
 }
 
@@ -1143,7 +1143,7 @@ textarea:focus-visible {
   justify-content: space-between;
   padding-top: 15px;
   color: #929daf;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .detail-version strong {
@@ -1181,7 +1181,7 @@ textarea:focus-visible {
 
 .form-section-heading span {
   color: #9aa4b2;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .form-grid {
@@ -1204,7 +1204,7 @@ textarea:focus-visible {
 
 .form-field > span {
   color: #526075;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
 }
 
@@ -1224,7 +1224,7 @@ textarea:focus-visible {
   outline: 0;
   background: #fff;
   color: #344054;
-  font-size: 14px;
+  font-size: 12px;
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
 
@@ -1252,7 +1252,7 @@ textarea:focus-visible {
 
 .field-error {
   color: #c85858;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .form-footer {
@@ -1361,7 +1361,7 @@ textarea:focus-visible {
   }
 
   .brand small {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .sidebar-label,
@@ -1382,7 +1382,7 @@ textarea:focus-visible {
     gap: 7px;
     padding: 0 11px;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .nav-link svg {
@@ -1430,11 +1430,11 @@ textarea:focus-visible {
   }
 
   .profile-copy strong {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .profile-copy small {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .page-content {
@@ -1457,7 +1457,7 @@ textarea:focus-visible {
 
   .welcome-description {
     max-width: 310px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .welcome-row > .button,
@@ -1486,7 +1486,7 @@ textarea:focus-visible {
   }
 
   .stat-helper {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .stat-value {
@@ -1495,7 +1495,7 @@ textarea:focus-visible {
   }
 
   .stat-label {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .panel-heading {
@@ -1503,15 +1503,15 @@ textarea:focus-visible {
   }
 
   .panel-heading h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .panel-heading p {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .text-link {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .recent-list {
@@ -1530,11 +1530,11 @@ textarea:focus-visible {
   }
 
   .recent-main strong {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .recent-main small {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .recent-meta {
@@ -1554,11 +1554,11 @@ textarea:focus-visible {
   }
 
   .footer-note small {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .footer-link {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .requests-panel {
@@ -1589,7 +1589,7 @@ textarea:focus-visible {
   .select-field select {
     width: 100%;
     min-width: 0;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .list-summary {
@@ -1600,7 +1600,7 @@ textarea:focus-visible {
   }
 
   .list-summary-caption {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .table-wrap {
@@ -1636,7 +1636,7 @@ textarea:focus-visible {
     min-width: 0;
     flex: 1;
     color: #354256;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 1.8;
   }
@@ -1647,7 +1647,7 @@ textarea:focus-visible {
     gap: 8px;
     margin-top: 10px;
     color: #98a2b3;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .mobile-card-bottom {
@@ -1662,13 +1662,13 @@ textarea:focus-visible {
 
   .mobile-card-bottom .status-control select {
     min-height: 28px;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .pagination {
     min-height: 54px;
     padding: 0 13px;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .inline-alert {
@@ -1676,7 +1676,7 @@ textarea:focus-visible {
     flex-direction: column;
     margin: 12px 12px 0;
     gap: 6px;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .mobile-create {
@@ -1700,7 +1700,7 @@ textarea:focus-visible {
 
   .record-id {
     padding-top: 3px;
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .detail-header {
@@ -1733,7 +1733,7 @@ textarea:focus-visible {
 
   .description-copy {
     padding: 2px 16px 18px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .status-editor {
@@ -1774,7 +1774,7 @@ textarea:focus-visible {
   .form-field textarea,
   .form-field select {
     min-height: 41px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .form-field textarea {
@@ -1789,7 +1789,7 @@ textarea:focus-visible {
   .form-footer .button {
     width: 100%;
     padding: 0 9px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .state-view {
