@@ -190,12 +190,12 @@ export function RequestsPage() {
               <table className="requests-table">
                 <thead>
                   <tr>
-                    <th>عنوان درخواست</th>
-                    <th>درخواست‌دهنده</th>
-                    <th>تاریخ ثبت</th>
-                    <th>اولویت</th>
-                    <th>وضعیت</th>
-                    <th aria-label="عملیات" />
+                    <th scope="col">عنوان درخواست</th>
+                    <th scope="col">درخواست‌دهنده</th>
+                    <th scope="col">تاریخ ثبت</th>
+                    <th scope="col">اولویت</th>
+                    <th scope="col">وضعیت</th>
+                    <th scope="col" aria-label="عملیات" />
                   </tr>
                 </thead>
                 <tbody>
