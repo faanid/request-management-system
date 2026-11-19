@@ -17,7 +17,7 @@ export function StateView({
   onRetry,
 }: StateViewProps) {
   return (
-    <section className={`state-view state-${kind}`} role={kind === "error" ? "alert" : "status"}>
+    <section className={`state-view state-${kind}`} role={kind === "error" ? "alert" : "status"} aria-busy={kind === "loading"}>
       <span className="state-icon">
         {kind === "loading" ? <LoaderCircle className="spin" size={22} /> : <AlertCircle size={22} />}
       </span>
