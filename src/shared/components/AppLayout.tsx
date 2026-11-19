@@ -1,5 +1,4 @@
 import {
-  Bell,
   ClipboardList,
   LayoutDashboard,
   Plus,
@@ -62,13 +61,9 @@ export function AppLayout() {
             <h1>{title}</h1>
           </div>
           <div className="topbar-actions">
-            <button className="icon-button topbar-search" type="button" aria-label="جست‌وجو">
+            <Link className="icon-button topbar-search" to="/requests" aria-label="جست‌وجوی درخواست‌ها">
               <Search size={19} />
-            </button>
-            <button className="icon-button notification-button" type="button" aria-label="اعلان‌ها">
-              <Bell size={19} />
-              <span />
-            </button>
+            </Link>
             <div className="profile">
               <span className="profile-avatar">ف</span>
               <span className="profile-copy">
@@ -83,9 +78,11 @@ export function AppLayout() {
           <Outlet />
         </main>
 
-        <NavLink to="/requests/new" className="mobile-create" aria-label="ثبت درخواست جدید">
-          <Plus size={22} />
-        </NavLink>
+        {location.pathname !== "/requests/new" && !location.pathname.endsWith("/edit") && (
+          <NavLink to="/requests/new" className="mobile-create" aria-label="ثبت درخواست جدید">
+            <Plus size={22} />
+          </NavLink>
+        )}
       </div>
     </div>
   );
