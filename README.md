@@ -113,11 +113,6 @@ The optional concurrency flow uses the API's `version` and `expected_version` fi
 
 The mock API has no authentication and is intended for local assessment use. It should not be exposed publicly without appropriate access controls.
 
-## Design and quality references
-
-- [Interface design specification](docs/design-spec.md)
-- [Quality assurance checklist](docs/qa-checklist.md)
-
 ## Quality checks
 
 ```bash
@@ -129,4 +124,4 @@ The GitHub Actions workflow also runs frontend type-check/build validation and M
 
 ## Implementation
 
-The dashboard, request listing, details, create/edit forms, and API-connected status updates are implemented. Responsive RTL layouts and automated frontend/API checks are included.
+The repository foundation and local Mock API are in place. The application interface and API-connected workflows are being implemented.
