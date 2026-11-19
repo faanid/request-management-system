@@ -12,7 +12,6 @@ import { Link, useSearchParams } from "react-router";
 import type { RequestFilters, RequestPriority, RequestStatus } from "./types";
 import { useRequests, useUpdateRequest } from "./hooks";
 import { PriorityBadge } from "../../shared/components/PriorityBadge";
-import { StatusBadge } from "../../shared/components/StatusBadge";
 import { StateView } from "../../shared/components/StateView";
 import { formatDate, formatNumber } from "../../shared/lib/format";
 import { ApiError } from "../../shared/api/client";
@@ -44,12 +43,12 @@ function getFilters(params: URLSearchParams): RequestFilters {
 export function RequestsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const filters = getFilters(searchParams);
-  const [search, setSearch] = useState(filters.q);
+  const [search, setSearch] = useState<string>(filters.q ?? "");
   const requestsQuery = useRequests(filters);
   const updateMutation = useUpdateRequest();
 
   useEffect(() => {
-    setSearch(filters.q);
+    setSearch(filters.q ?? "");
   }, [filters.q]);
 
   useEffect(() => {
