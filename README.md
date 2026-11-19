@@ -113,6 +113,11 @@ The optional concurrency flow uses the API's `version` and `expected_version` fi
 
 The mock API has no authentication and is intended for local assessment use. It should not be exposed publicly without appropriate access controls.
 
+## Design and quality references
+
+- [Interface design specification](docs/design-spec.md)
+- [Quality assurance checklist](docs/qa-checklist.md)
+
 ## Quality checks
 
 ```bash
