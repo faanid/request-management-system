@@ -114,12 +114,7 @@ textarea:focus-visible {
   color: #fff;
 }
 
-.brand strong,
-.brand small,
-.profile-copy strong,
-.profile-copy small,
-.sidebar-help strong,
-.sidebar-help small {
+.brand strong {
   display: block;
 }
 
@@ -127,12 +122,6 @@ textarea:focus-visible {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: -0.2px;
-}
-
-.brand small {
-  margin-top: 4px;
-  color: #a6b2c4;
-  font-size: 11px;
 }
 
 .sidebar-label {
@@ -1247,12 +1236,7 @@ textarea:focus-visible {
     font-size: 14px;
   }
 
-  .brand small {
-    font-size: 10px;
-  }
-
-  .sidebar-label,
-  .sidebar-bottom {
+  .sidebar-label {
     display: none;
   }
 
@@ -1411,13 +1395,6 @@ textarea:focus-visible {
   .recent-arrow {
     width: 15px;
     flex: 0 0 15px;
-  }
-
-  .dashboard-footer {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-    padding: 13px;
   }
 
 
