@@ -2,7 +2,6 @@ import {
   ClipboardList,
   LayoutDashboard,
   Plus,
-  Search,
 } from "lucide-react";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 
@@ -21,16 +20,6 @@ export function AppLayout() {
     <div className="app-layout">
       <a className="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
       <aside className="sidebar">
-        <div className="brand">
-          <span className="brand-mark">
-            <ClipboardList size={22} />
-          </span>
-          <span>
-            <strong>مدیریت درخواست‌ها</strong>
-          </span>
-        </div>
-
-        <div className="sidebar-label">فضای کاری</div>
         <nav className="main-nav" aria-label="منوی اصلی">
           <NavLink to="/" end className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
             <LayoutDashboard size={19} />
@@ -49,11 +38,6 @@ export function AppLayout() {
           <div className="topbar-heading">
             <span className="breadcrumb">پنل مدیریت</span>
             <h1>{title}</h1>
-          </div>
-          <div className="topbar-actions">
-            <Link className="icon-button topbar-search" to="/requests" aria-label="جست‌وجوی درخواست‌ها">
-              <Search size={19} />
-            </Link>
           </div>
         </header>
 
