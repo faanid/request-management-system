@@ -180,10 +180,7 @@ textarea:focus-visible {
   font-weight: 700;
 }
 
-.icon-button:hover {
-  border-color: #dfd2c5;
-  background: #fbf7f2;
-}
+
 
 .page-content {
   width: min(100%, 1480px);
@@ -1142,7 +1139,7 @@ textarea:focus-visible {
     padding-left: 13px;
   }
 
-    .stats-grid {
+  .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1168,7 +1165,7 @@ textarea:focus-visible {
     padding: 12px 16px 10px;
   }
 
-          .main-nav {
+  .main-nav {
     display: flex;
     gap: 7px;
     overflow-x: auto;
@@ -1202,11 +1199,9 @@ textarea:focus-visible {
     font-size: 14px;
   }
 
-    .topbar-search {
-    display: none;
-  }
 
-    .page-content {
+
+  .page-content {
     padding: 22px 16px 84px;
   }
 
