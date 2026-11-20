@@ -1199,7 +1199,7 @@ textarea:focus-visible {
   }
 
   .stat-value {
-    margin-top: 12px;
+    margin-top: 0;
     font-size: 22px;
   }
 
