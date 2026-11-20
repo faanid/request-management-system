@@ -15,6 +15,7 @@ export function AppLayout() {
 
   return (
     <div className="app-layout">
+      <a className="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
       <aside className="sidebar">
         <div className="brand">
           <span>
@@ -56,7 +57,7 @@ export function AppLayout() {
           </div>
         </header>
 
-        <main className="page-content">
+        <main className="page-content" id="main-content" tabIndex={-1}>
           <Outlet />
         </main>
 
