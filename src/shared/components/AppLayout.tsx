@@ -3,7 +3,7 @@ import {
   LayoutDashboard,
   Plus,
 } from "lucide-react";
-import { Link, NavLink, Outlet, useLocation } from "react-router";
+import { NavLink, Outlet, useLocation } from "react-router";
 
 const pageTitles: Record<string, string> = {
   "/": "داشبورد",
