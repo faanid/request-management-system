@@ -3,7 +3,6 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  ClipboardList,
   Plus,
   Search,
   SlidersHorizontal,
@@ -81,7 +80,11 @@ export function RequestsPage() {
     setSearchParams(next);
   }
 
-  function changeStatus(id: number, status: RequestStatus, expectedVersion: number) {
+  function changeStatus(
+    id: number,
+    status: RequestStatus,
+    expectedVersion: number,
+  ) {
     updateMutation.mutate({
       id,
       payload: { status, expected_version: expectedVersion },
@@ -90,7 +93,8 @@ export function RequestsPage() {
 
   const data = requestsQuery.data;
   const mutationError = updateMutation.error;
-  const isConflict = mutationError instanceof ApiError && mutationError.status === 409;
+  const isConflict =
+    mutationError instanceof ApiError && mutationError.status === 409;
 
   if (requestsQuery.isPending) {
     return <StateView kind="loading" title="در حال دریافت فهرست درخواست‌ها" />;
@@ -113,7 +117,9 @@ export function RequestsPage() {
         <div>
           <p className="page-kicker">مدیریت و پیگیری</p>
           <h2>همه درخواست‌ها</h2>
-          <p className="welcome-description">درخواست‌ها را جست‌وجو، فیلتر و به‌روزرسانی کنید.</p>
+          <p className="welcome-description">
+            درخواست‌ها را جست‌وجو، فیلتر و به‌روزرسانی کنید.
+          </p>
         </div>
         <Link className="button button-primary" to="/requests/new">
           <Plus size={18} />
@@ -132,7 +138,12 @@ export function RequestsPage() {
               onChange={(event) => setSearch(event.target.value)}
             />
             {search && (
-              <button type="button" className="clear-search" onClick={() => setSearch("")} aria-label="پاک کردن جست‌وجو">
+              <button
+                type="button"
+                className="clear-search"
+                onClick={() => setSearch("")}
+                aria-label="پاک کردن جست‌وجو"
+              >
                 ×
               </button>
             )}
@@ -146,7 +157,9 @@ export function RequestsPage() {
                 onChange={(event) => updateFilter("status", event.target.value)}
               >
                 {statusOptions.map((option) => (
-                  <option value={option.value} key={option.value}>{option.label}</option>
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </select>
               <ChevronDown size={15} />
@@ -155,10 +168,14 @@ export function RequestsPage() {
               <select
                 aria-label="فیلتر اولویت"
                 value={filters.priority}
-                onChange={(event) => updateFilter("priority", event.target.value)}
+                onChange={(event) =>
+                  updateFilter("priority", event.target.value)
+                }
               >
                 {priorityOptions.map((option) => (
-                  <option value={option.value} key={option.value}>{option.label}</option>
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </select>
               <ChevronDown size={15} />
@@ -168,7 +185,8 @@ export function RequestsPage() {
 
         {isConflict && (
           <div className="inline-alert" role="alert">
-            این درخواست در جای دیگری تغییر کرده است. اطلاعات فهرست به‌روزرسانی شد؛ دوباره وضعیت را انتخاب کنید.
+            این درخواست در جای دیگری تغییر کرده است. اطلاعات فهرست به‌روزرسانی
+            شد؛ دوباره وضعیت را انتخاب کنید.
           </div>
         )}
         {mutationError && !isConflict && (
@@ -178,8 +196,13 @@ export function RequestsPage() {
         )}
 
         <div className="list-summary">
-          <span>نمایش <strong>{formatNumber(data?.items.length ?? 0)}</strong> مورد از <strong>{formatNumber(data?.total ?? 0)}</strong> درخواست</span>
-          <span className="list-summary-caption">آخرین اطلاعات دریافت‌شده از سرویس</span>
+          <span>
+            نمایش <strong>{formatNumber(data?.items.length ?? 0)}</strong> مورد
+            از <strong>{formatNumber(data?.total ?? 0)}</strong> درخواست
+          </span>
+          <span className="list-summary-caption">
+            آخرین اطلاعات دریافت‌شده از سرویس
+          </span>
         </div>
 
         {data?.items.length ? (
@@ -200,8 +223,10 @@ export function RequestsPage() {
                   {data.items.map((request) => (
                     <tr key={request.id}>
                       <td>
-                        <Link to={`/requests/${request.id}`} className="request-title-link">
-                          <span className="table-request-icon"><ClipboardList size={17} /></span>
+                        <Link
+                          to={`/requests/${request.id}`}
+                          className="request-title-link"
+                        >
                           <span>
                             <strong>{request.title}</strong>
                             <small>شناسه #{formatNumber(request.id)}</small>
@@ -209,25 +234,45 @@ export function RequestsPage() {
                         </Link>
                       </td>
                       <td>{request.requester}</td>
-                      <td className="date-cell">{formatDate(request.created_at)}</td>
-                      <td><PriorityBadge priority={request.priority} /></td>
+                      <td className="date-cell">
+                        {formatDate(request.created_at)}
+                      </td>
+                      <td>
+                        <PriorityBadge priority={request.priority} />
+                      </td>
                       <td>
                         <label className="status-control">
-                          <span className="sr-only">تغییر وضعیت {request.title}</span>
+                          <span className="sr-only">
+                            تغییر وضعیت {request.title}
+                          </span>
                           <select
                             value={request.status}
-                            onChange={(event) => changeStatus(request.id, event.target.value as RequestStatus, request.version)}
+                            onChange={(event) =>
+                              changeStatus(
+                                request.id,
+                                event.target.value as RequestStatus,
+                                request.version,
+                              )
+                            }
                             disabled={updateMutation.isPending}
                             aria-label={`وضعیت ${request.title}`}
                           >
-                            {statusOptions.filter((option) => option.value).map((option) => (
-                              <option key={option.value} value={option.value}>{option.label}</option>
-                            ))}
+                            {statusOptions
+                              .filter((option) => option.value)
+                              .map((option) => (
+                                <option key={option.value} value={option.value}>
+                                  {option.label}
+                                </option>
+                              ))}
                           </select>
                         </label>
                       </td>
                       <td>
-                        <Link className="table-action" to={`/requests/${request.id}`} aria-label={`مشاهده ${request.title}`}>
+                        <Link
+                          className="table-action"
+                          to={`/requests/${request.id}`}
+                          aria-label={`مشاهده ${request.title}`}
+                        >
                           <ChevronLeft size={18} />
                         </Link>
                       </td>
@@ -241,9 +286,17 @@ export function RequestsPage() {
               {data.items.map((request) => (
                 <article className="mobile-request-card" key={request.id}>
                   <div className="mobile-card-top">
-                    <span className="table-request-icon"><ClipboardList size={17} /></span>
-                    <Link to={`/requests/${request.id}`} className="mobile-request-title">{request.title}</Link>
-                    <Link className="table-action" to={`/requests/${request.id}`} aria-label="مشاهده جزئیات">
+                    <Link
+                      to={`/requests/${request.id}`}
+                      className="mobile-request-title"
+                    >
+                      {request.title}
+                    </Link>
+                    <Link
+                      className="table-action"
+                      to={`/requests/${request.id}`}
+                      aria-label="مشاهده جزئیات"
+                    >
                       <ChevronLeft size={18} />
                     </Link>
                   </div>
@@ -254,16 +307,28 @@ export function RequestsPage() {
                   <div className="mobile-card-bottom">
                     <PriorityBadge priority={request.priority} />
                     <label className="status-control">
-                      <span className="sr-only">تغییر وضعیت {request.title}</span>
+                      <span className="sr-only">
+                        تغییر وضعیت {request.title}
+                      </span>
                       <select
                         value={request.status}
-                        onChange={(event) => changeStatus(request.id, event.target.value as RequestStatus, request.version)}
+                        onChange={(event) =>
+                          changeStatus(
+                            request.id,
+                            event.target.value as RequestStatus,
+                            request.version,
+                          )
+                        }
                         disabled={updateMutation.isPending}
                         aria-label={`وضعیت ${request.title}`}
                       >
-                        {statusOptions.filter((option) => option.value).map((option) => (
-                          <option key={option.value} value={option.value}>{option.label}</option>
-                        ))}
+                        {statusOptions
+                          .filter((option) => option.value)
+                          .map((option) => (
+                            <option key={option.value} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
                       </select>
                     </label>
                   </div>
@@ -272,7 +337,10 @@ export function RequestsPage() {
             </div>
 
             <div className="pagination">
-              <span>صفحه {formatNumber(data.page)} از {formatNumber(Math.max(data.total_pages, 1))}</span>
+              <span>
+                صفحه {formatNumber(data.page)} از{" "}
+                {formatNumber(Math.max(data.total_pages, 1))}
+              </span>
               <div className="pagination-actions">
                 <button
                   type="button"

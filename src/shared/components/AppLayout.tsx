@@ -1,10 +1,5 @@
-import {
-  ClipboardList,
-  LayoutDashboard,
-  Plus,
-  Search,
-} from "lucide-react";
-import { Link, NavLink, Outlet, useLocation } from "react-router";
+import {Plus } from "lucide-react";
+import {NavLink, Outlet, useLocation } from "react-router";
 
 const pageTitles: Record<string, string> = {
   "/": "داشبورد",
@@ -14,33 +9,38 @@ const pageTitles: Record<string, string> = {
 
 export function AppLayout() {
   const location = useLocation();
-  const title = pageTitles[location.pathname]
-    ?? (location.pathname.endsWith("/edit") ? "ویرایش درخواست" : "جزئیات درخواست");
+  const title =
+    pageTitles[location.pathname] ??
+    (location.pathname.endsWith("/edit") ? "ویرایش درخواست" : "جزئیات درخواست");
 
   return (
     <div className="app-layout">
       <aside className="sidebar">
         <div className="brand">
-          <span className="brand-mark">
-            <ClipboardList size={22} />
-          </span>
           <span>
             <strong>مدیریت درخواست‌ها</strong>
           </span>
         </div>
 
-        <div className="sidebar-label">فضای کاری</div>
         <nav className="main-nav" aria-label="منوی اصلی">
-          <NavLink to="/" end className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-            <LayoutDashboard size={19} />
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
             <span>داشبورد</span>
           </NavLink>
-          <NavLink to="/requests" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-            <ClipboardList size={19} />
+          <NavLink
+            to="/requests"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
             <span>همه درخواست‌ها</span>
           </NavLink>
         </nav>
-
       </aside>
 
       <div className="workspace">
@@ -50,9 +50,9 @@ export function AppLayout() {
             <h1>{title}</h1>
           </div>
           <div className="topbar-actions">
-            <Link className="icon-button topbar-search" to="/requests" aria-label="جست‌وجوی درخواست‌ها">
+            {/* <Link className="icon-button topbar-search" to="/requests" aria-label="جست‌وجوی درخواست‌ها">
               <Search size={19} />
-            </Link>
+            </Link> */}
           </div>
         </header>
 
@@ -60,11 +60,16 @@ export function AppLayout() {
           <Outlet />
         </main>
 
-        {location.pathname !== "/requests/new" && !location.pathname.endsWith("/edit") && (
-          <NavLink to="/requests/new" className="mobile-create" aria-label="ثبت درخواست جدید">
-            <Plus size={22} />
-          </NavLink>
-        )}
+        {location.pathname !== "/requests/new" &&
+          !location.pathname.endsWith("/edit") && (
+            <NavLink
+              to="/requests/new"
+              className="mobile-create"
+              aria-label="ثبت درخواست جدید"
+            >
+              <Plus size={22} />
+            </NavLink>
+          )}
       </div>
     </div>
   );

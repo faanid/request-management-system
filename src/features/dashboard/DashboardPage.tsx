@@ -43,13 +43,6 @@ export function DashboardPage() {
   return (
     <div className="page-stack">
       <section className="welcome-row">
-        <div>
-          <p className="page-kicker">نمای کلی فعالیت‌ها</p>
-          <h2>روز بخیر، به پنل درخواست‌ها خوش آمدید</h2>
-          <p className="welcome-description">
-            وضعیت درخواست‌های سازمان را در یک نگاه دنبال کنید.
-          </p>
-        </div>
         <Link className="button button-primary" to="/requests/new">
           <Plus size={18} />
           ثبت درخواست
@@ -104,13 +97,17 @@ export function DashboardPage() {
         ) : requestsQuery.data?.items.length ? (
           <div className="recent-list">
             {requestsQuery.data.items.map((request) => (
-              <Link className="recent-item" to={`/requests/${request.id}`} key={request.id}>
-                <span className="request-file-icon">
-                  <ClipboardList size={19} />
-                </span>
+              <Link
+                className="recent-item"
+                to={`/requests/${request.id}`}
+                key={request.id}
+              >
+                
                 <span className="recent-main">
                   <strong>{request.title}</strong>
-                  <small>{request.requester} · {formatDate(request.created_at)}</small>
+                  <small>
+                    {request.requester} · {formatDate(request.created_at)}
+                  </small>
                 </span>
                 <span className="recent-meta">
                   <PriorityBadge priority={request.priority} />
@@ -126,7 +123,10 @@ export function DashboardPage() {
             title="هنوز درخواستی ثبت نشده است"
             description="با ثبت اولین درخواست، فعالیت‌ها در این بخش نمایش داده می‌شوند."
             action={
-              <Link className="button button-primary button-small" to="/requests/new">
+              <Link
+                className="button button-primary button-small"
+                to="/requests/new"
+              >
                 <Plus size={16} />
                 ثبت درخواست
               </Link>
@@ -134,7 +134,6 @@ export function DashboardPage() {
           />
         )}
       </section>
-
     </div>
   );
 }
