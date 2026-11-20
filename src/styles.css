@@ -286,48 +286,8 @@ textarea:focus-visible {
   box-shadow: 0 2px 5px rgb(20 32 52 / 2%);
 }
 
-.stat-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.stat-icon {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: 11px;
-}
-
-.stat-icon-blue {
-  background: #f2e7dd;
-  color: #8a5a3c;
-}
-
-.stat-icon-amber {
-  background: #fff5e7;
-  color: #d18a2d;
-}
-
-.stat-icon-slate {
-  background: #eef2f7;
-  color: #63758d;
-}
-
-.stat-icon-green {
-  background: #e9f8f1;
-  color: #2d9c70;
-}
-
-.stat-helper {
-  color: #9aa4b2;
-  font-size: 11px;
-}
-
 .stat-value {
-  margin-top: 17px;
+  margin-top: 0;
   color: #1c293b;
   font-size: 27px;
   font-weight: 700;
@@ -1238,23 +1198,8 @@ textarea:focus-visible {
     border-radius: 11px;
   }
 
-  .stat-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
-  }
-
-  .stat-icon svg {
-    width: 17px;
-    height: 17px;
-  }
-
-  .stat-helper {
-    font-size: 10px;
-  }
-
   .stat-value {
-    margin-top: 12px;
+    margin-top: 0;
     font-size: 22px;
   }
 
