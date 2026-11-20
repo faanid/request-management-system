@@ -5,7 +5,6 @@ import {
   ChevronRight,
   ClipboardList,
   Plus,
-  Search,
   SlidersHorizontal,
 } from "lucide-react";
 import { Link, useSearchParams } from "react-router";
@@ -114,9 +113,7 @@ export function RequestsPage() {
     <div className="page-stack">
       <section className="page-intro">
         <div>
-          <p className="page-kicker">مدیریت و پیگیری</p>
           <h2>همه درخواست‌ها</h2>
-          <p className="welcome-description">درخواست‌ها را جست‌وجو، فیلتر و به‌روزرسانی کنید.</p>
         </div>
         <Link className="button button-primary" to="/requests/new">
           <Plus size={18} />
@@ -127,7 +124,6 @@ export function RequestsPage() {
       <section className="content-panel requests-panel">
         <div className="list-toolbar">
           <div className="search-field">
-            <Search size={18} />
             <input
               aria-label="جست‌وجوی درخواست"
               placeholder="جست‌وجو بر اساس عنوان یا درخواست‌دهنده..."
